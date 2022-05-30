@@ -18,7 +18,7 @@ class NetworkManager: NSObject {
     
     private let posterImageBaseUrl = "https://image.tmdb.org/t/p/w500"
     
-    func getMovies(for query: String = "marvel", completed: @escaping (Result<[Movie], CustomError>) -> Void) {
+    func getMovies(for query: String, completed: @escaping (Result<[Movie], CustomError>) -> Void) {
         
         let urlString = themoviedbURL.replacingOccurrences(of: "$search", with: query)
         

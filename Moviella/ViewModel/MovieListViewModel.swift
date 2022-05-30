@@ -12,10 +12,10 @@ final class MovieListViewModel: ObservableObject {
     @Published var movies: [Movie] = []
     @Published var isLoading = false
     
-    func getMovies() {
+    func getMovies(for query: String = "marvel") {
         isLoading = true
         
-        NetworkManager.shared.getMovies { [weak self] result in
+        NetworkManager.shared.getMovies(for: query) { [weak self] result in
             
             DispatchQueue.main.async {
                 
