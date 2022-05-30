@@ -9,13 +9,13 @@ import SwiftUI
 
 struct MovieRemoteImage: View {
     
-    @StateObject private var imageViewModel = MovieRemoteImageViewModel()
+    @StateObject private var viewModel = MovieRemoteImageViewModel()
     
     var urlString: String
     
     var body: some View {
-        RemoteImage(image: imageViewModel.image)
-            .onAppear { imageViewModel.load(fromURL: urlString) }
+        RemoteImage(image: viewModel.image)
+            .onAppear { viewModel.load(fromURL: urlString) }
     }
 }
 

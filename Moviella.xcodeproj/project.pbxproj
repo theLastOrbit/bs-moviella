@@ -18,6 +18,7 @@
 		2579FF0628452AFC007C11F6 /* MovieRemoteImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2579FF0528452AFC007C11F6 /* MovieRemoteImageViewModel.swift */; };
 		2579FF0928452B2F007C11F6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2579FF0828452B2F007C11F6 /* NetworkManager.swift */; };
 		2579FF0B28452B46007C11F6 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2579FF0A28452B46007C11F6 /* CustomError.swift */; };
+		2579FF0D28452F19007C11F6 /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2579FF0C28452F19007C11F6 /* MovieListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		2579FF0528452AFC007C11F6 /* MovieRemoteImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRemoteImageViewModel.swift; sourceTree = "<group>"; };
 		2579FF0828452B2F007C11F6 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		2579FF0A28452B46007C11F6 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		2579FF0C28452F19007C11F6 /* MovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		2579FEF8284529CF007C11F6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2579FF0C28452F19007C11F6 /* MovieListViewModel.swift */,
 				2579FF0528452AFC007C11F6 /* MovieRemoteImageViewModel.swift */,
 			);
 			path = ViewModel;
@@ -199,6 +202,7 @@
 				2579FF0228452AA0007C11F6 /* LoadingView.swift in Sources */,
 				2579FF0628452AFC007C11F6 /* MovieRemoteImageViewModel.swift in Sources */,
 				2579FEFE28452A52007C11F6 /* MovieListView.swift in Sources */,
+				2579FF0D28452F19007C11F6 /* MovieListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

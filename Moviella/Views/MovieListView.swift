@@ -9,39 +9,19 @@ import SwiftUI
 
 struct MovieListView: View {
     
-    @State private var movies: [Movie] = []
-    @State private var isLoading = false
+    @StateObject private var viewModel = MovieListViewModel()
     
     var body: some View {
         ZStack {
             NavigationView {
-                List(movies, id: \.id) { movie in
+                List(viewModel.movies, id: \.id) { movie in
                     MovieCell(movie: movie)
                 }
                 .navigationTitle("Movie List")
             }
-            .onAppear { getMovies() }
+            .onAppear { viewModel.getMovies() }
             
-            if isLoading { LoadingView() }
-        }
-    }
-    
-    func getMovies() {
-        isLoading = false
-        
-        NetworkManager.shared.getMovies { [self] result in
-            
-            DispatchQueue.main.async {
-                isLoading = false
-                
-                switch result {
-                case .success(let movies):
-                    self.movies = movies
-                    
-                case .failure(let error):
-                    print("==> Error \(error)")
-                }
-            }
+            if viewModel.isLoading { LoadingView() }
         }
     }
 }
