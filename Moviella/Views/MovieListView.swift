@@ -9,8 +9,12 @@ import SwiftUI
 
 struct MovieListView: View {
     
+    @Environment(\.colorScheme) var colorScheme
+    
     @StateObject private var viewModel = MovieListViewModel()
+    
     @State private var searchText = ""
+    @State private var isDarkMode = false
     
     var body: some View {
         ZStack {
@@ -23,11 +27,22 @@ struct MovieListView: View {
                 .onSubmit(of: .search) {
                     viewModel.getMovies(for: searchText)
                 }
+                .navigationBarItems(trailing: Button(action: {
+                    isDarkMode.toggle()
+                }) {
+                    Image(systemName: isDarkMode ? "sun.max" : "moon")
+                        .imageScale(.small)
+                        .foregroundColor(isDarkMode ? .white : .black)
+                })
             }
             .onAppear { viewModel.getMovies() }
             
             if viewModel.isLoading { LoadingView() }
         }
+        .onAppear {
+            isDarkMode = colorScheme == .dark
+        }
+        .preferredColorScheme(isDarkMode ? .dark : .light)
     }
 }
 
