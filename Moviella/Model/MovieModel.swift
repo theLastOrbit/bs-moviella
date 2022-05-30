@@ -19,9 +19,9 @@ struct MovieModel: Decodable {
 struct Movie: Decodable {
     
     let id: Int
-    let overview: String
-    let posterPath: String
-    let title: String
+    let overview: String?
+    let posterPath: String?
+    let title: String?
     
     enum CodingKeys: String, CodingKey {
         case id = "id"

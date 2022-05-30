@@ -13,19 +13,19 @@ struct MovieCell: View {
     
     var body: some View {
         HStack {
-            MovieRemoteImage(urlString: movie.posterPath)
+            MovieRemoteImage(urlString: movie.posterPath ?? "")
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 100, height: 150)
                 .cornerRadius(8)
             
             VStack(alignment: .leading, spacing: 5) {
-                Text(movie.title)
+                Text(movie.title ?? "-")
                     .font(.title2)
                     .fontWeight(.medium)
                     .lineLimit(2)
                     .minimumScaleFactor(0.5)
                 
-                Text(movie.overview)
+                Text(movie.overview ?? "-")
                     .foregroundColor(.secondary)
                     .fontWeight(.regular)
                     .lineLimit(6)
