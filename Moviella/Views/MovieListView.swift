@@ -10,6 +10,7 @@ import SwiftUI
 struct MovieListView: View {
     
     @StateObject private var viewModel = MovieListViewModel()
+    @State private var searchText = ""
     
     var body: some View {
         ZStack {
@@ -18,6 +19,10 @@ struct MovieListView: View {
                     MovieCell(movie: movie)
                 }
                 .navigationTitle("Movie List")
+                .searchable(text: $searchText, prompt: "Search for movies")
+                .onSubmit(of: .search) {
+                    viewModel.getMovies(for: searchText)
+                }
             }
             .onAppear { viewModel.getMovies() }
             

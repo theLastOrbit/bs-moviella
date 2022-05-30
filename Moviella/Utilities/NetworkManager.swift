@@ -20,7 +20,10 @@ class NetworkManager: NSObject {
     
     func getMovies(for query: String, completed: @escaping (Result<[Movie], CustomError>) -> Void) {
         
-        let urlString = themoviedbURL.replacingOccurrences(of: "$search", with: query)
+        let urlString = themoviedbURL
+            .replacingOccurrences(of: "$search", with: query)
+            .replacingOccurrences(of: " ", with: "%20")
+            .trimmingCharacters(in: .whitespacesAndNewlines)
         
         guard
             let url = URL(string: urlString)
